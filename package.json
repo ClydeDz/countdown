@@ -1,0 +1,18 @@
+{
+  "name": "countdown",
+  "version": "1.0.0",
+  "description": "Placeholder description",
+  "author": "Clyde D'Souza",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js --reporter mocha-junit-reporter --timeout 150000 --exit",
+    "devtest": "mocha tests/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.8",
+    "@types/q": "^1.5.2",
+    "mocha-junit-reporter": "^1.22.0",
+    "eslint": "5.16.0"
+  }
+}
