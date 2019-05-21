@@ -6,7 +6,7 @@
     timeleft: number;
 };
 
-export class Time {
+export class TimeMachine {
     calculateTimeLeft(eventDate: any, today: any): CountdownTime {
         let timeLeft: number = (eventDate - today);
         let result = new CountdownTime();
@@ -18,5 +18,21 @@ export class Time {
         result.seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
         return result;
-    };
+    }
+
+    generateDaysLeftMessage(daysLeft: number): string {
+        return daysLeft == 1 ? `${daysLeft} day` : `${daysLeft} days`;
+    }
+
+    generateHoursLeftMessage(hoursLeft: number): string {
+        return hoursLeft == 1 ? `${hoursLeft} hour` : `${hoursLeft} hours`;
+    }
+
+    generateMinutesLeftMessage(minutesLeft: number): string {
+        return minutesLeft == 1 ? `${minutesLeft} minute` : `${minutesLeft} minutes`;
+    }
+
+    generateSecondsLeftMessage(secondsLeft: number): string {
+        return secondsLeft == 1 ? `${secondsLeft} second` : `${secondsLeft} seconds`;
+    }
 };
