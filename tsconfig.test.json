@@ -4,9 +4,12 @@
       "module": "commonjs",
       "strict": true, 
       "esModuleInterop": true,
-      "outDir": "dist/js"
+      "outDir": "tests/js"
     },
-    "exclude": [
+    "include": [
       "tests"
+    ],
+    "exclude": [
+      "scripts"
     ]
   }

@@ -5,14 +5,18 @@
   "author": "Clyde D'Souza",
   "license": "MIT",
   "scripts": {
-    "test": "mocha tests/**/*.test.js --reporter mocha-junit-reporter --timeout 150000 --exit",
-    "devtest": "mocha tests/**/*.test.js"
+    "pretest": "tsc -p tsconfig.test.json",
+    "test": "mocha tests/**/*.js --reporter mocha-junit-reporter --timeout 150000 --exit",
+    "testdev": "npm run pretest & mocha tests/**/*.js",
+    "scss": "node-sass styles -o dist/css"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.13.8",
     "@types/q": "^1.5.2",
+    "eslint": "5.16.0",
     "mocha-junit-reporter": "^1.22.0",
-    "eslint": "5.16.0"
+    "node-sass": "^4.12.0",
+    "mocha": "^6.1.4"
   }
 }
