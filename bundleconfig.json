@@ -3,7 +3,6 @@
     "outputFileName": "css/bundle.css",
     "inputFiles": [
       "css/vendor/bootstrap.min.css",
-      "css/vendor/bootstrap-datetimepicker.min.css",
       "css/main.min.css"
     ]
   }

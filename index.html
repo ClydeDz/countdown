@@ -2,20 +2,32 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>H</title>
+    <title>Countdown timer</title>
     <link href="css/bundle.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
-    <input type="text" id="eventNameInput" />
-    <input type="text" name="daterange" id="eventDateTimeInput" />
-    <div id="countdownTimeOutput"></div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <nav>
+        <h1>Countdown</h1>
+    </nav>
+    <main>
+        <div id="inputBlock">
+            <input type="text" id="eventNameInput" />
+            <input type="text" name="daterange" id="eventDateTimeInput" />
+            <button type="button" class="btn btn-primary" id="generateCountdownBtn">Generate countdown</button>
+        </div>
+        <div id="outputBlock">
+            <div id="countdownTimeEventNameOutput"></div>
+            <div id="countdownTimeOutput"></div>
+        </div>
+    </main>
+    <footer>
+        Crafted by <a href="https://clydedsouza.net">Clyde D'Souza</a>
+    </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    
+    <script type="text/javascript" src="scripts/js/bootstrap.min.js"></script>
     <script>
         $(function () {
             $('input[name="daterange"]').daterangepicker({
@@ -31,12 +43,16 @@
                 });
 
             function gett() {
-                var drp = $('#eventDateTimeInput').data('daterangepicker');
+                var drp = $('#eventDateTimeInput').val();
                 console.log(drp);
             }
+
+            $("#generateCountdownBtn").on('click', function () {
+                window.location.assign(window.location.href + "?w=" + $('#eventDateTimeInput').val() + "&e=" + $('#eventNameInput').val());
+            });
         });
     </script>
-    <script data-main="js/app" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.min.js"></script>
+    <script data-main="scripts/js/app" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.min.js"></script>
 
 </body>
 </html>
