@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "pretest": "tsc -p tsconfig.test.json",
-    "test": "mocha tests/**/*.js --reporter mocha-junit-reporter --timeout 150000 --exit",
-    "testdev": "npm run pretest & mocha tests/**/*.js",
+    "test": "mocha tests/**/*.test.js --reporter mocha-junit-reporter --timeout 150000 --exit",
+    "testdev": "npm run pretest & mocha tests/**/*.test.js",
     "scss": "node-sass styles -o dist/css"
   },
   "devDependencies": {
