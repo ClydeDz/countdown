@@ -2,3 +2,11 @@ node_modules
 
 # Mocha junit reporter test result file
 test-results.xml
+
+# Test compiled js files and dependencies
+tests/js
+
+# Ideally we'd want to exclude the dist folder since 
+# its only compiled files but since the website is 
+# running on GitHub pages, we'll leave this source controlled
+# dist
