@@ -19,5 +19,14 @@ describe('UrlProcessor', function () {
             actual = urlProcessor.hasQueryString("");
             assert.equal(actual, false, 'should be false'); 
         }); 
-    });   
+    }); 
+    
+    describe('parseQueryString', function () {
+        var urlProcessor = new UrlProcessor();
+
+        it('should handle valid query string formats', function () {             
+            var actual = urlProcessor.parseQueryString("www.example.com?foo=bar&abc=xyz");
+            assert.equal(actual.query.abc == "xyz", true, 'should be true'); 
+        });   
+    });  
 });

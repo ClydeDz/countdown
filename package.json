@@ -17,6 +17,7 @@
     "eslint": "5.16.0",
     "mocha": "^6.1.4",
     "mocha-junit-reporter": "^1.22.0",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "query-string": "^6.5.0"
   }
 }

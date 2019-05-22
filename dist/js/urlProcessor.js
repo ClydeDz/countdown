@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const queryString = require('query-string');
 class UrlProcessor {
     hasQueryString(url) {
         if (url.length > 0 && url.indexOf('?') < 1) {
@@ -11,21 +12,10 @@ class UrlProcessor {
         }
         return queryStringSection.length > 0;
     }
-    parseQueryString(queryString) {
-        // if the query string is NULL
-        if (queryString == null) {
-            queryString = window.location.search.substring(1);
-        }
-        var params = new Map();
-        var queries = queryString.split("&");
-        queries.forEach((indexQuery) => {
-            var indexPair = indexQuery.split("=");
-            var queryKey = decodeURIComponent(indexPair[0]);
-            var queryValue = decodeURIComponent(indexPair.length > 1 ? indexPair[1] : "");
-            //params[queryKey] = queryValue.toString();
-        });
-        console.log(params);
-        return params;
+    parseQueryString(url) {
+        var qs = queryString.parseUrl(url);
+        console.log(qs.length);
+        return qs;
     }
     ;
 }
