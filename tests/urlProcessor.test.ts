@@ -6,13 +6,15 @@ describe('UrlProcessor', function () {
         var urlProcessor = new UrlProcessor();
 
         it('should handle valid query string formats', function () {             
-            var actual = urlProcessor.hasQueryString("www.example.com?foo=bar");
+            var actual = urlProcessor.hasQueryString("www.example.com?e=bar");
             assert.equal(actual, true, 'should be true'); 
-            actual = urlProcessor.hasQueryString("www.example.com?foo=bar&abc=xyz");
+            actual = urlProcessor.hasQueryString("www.example.com?foo=bar&e=xyz");
             assert.equal(actual, true, 'should be true'); 
         });  
         it('should handle invalid query string formats', function () {             
             var actual = urlProcessor.hasQueryString("www.example.com?");
+            assert.equal(actual, false, 'should be false'); 
+            actual = urlProcessor.hasQueryString("www.example.com?n=bar");
             assert.equal(actual, false, 'should be false'); 
             actual = urlProcessor.hasQueryString("www.example.com");
             assert.equal(actual, false, 'should be false'); 
@@ -20,13 +22,4 @@ describe('UrlProcessor', function () {
             assert.equal(actual, false, 'should be false'); 
         }); 
     }); 
-    
-    describe('parseQueryString', function () {
-        var urlProcessor = new UrlProcessor();
-
-        it('should handle valid query string formats', function () {             
-            var actual = urlProcessor.parseQueryString("www.example.com?foo=bar&abc=xyz");
-            assert.equal(actual.query.abc == "xyz", true, 'should be true'); 
-        });   
-    });  
 });

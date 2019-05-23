@@ -1,12 +1,17 @@
-import {UrlProcessor} from './urlProcessor'
+import {UrlProcessor} from './urlProcessor';
 
 function abc(){
-    return 1+2+1;
+    return 8+2+1;
 }
 
 window.onload = () => {
     console.log(abc());
-    var urlP = new UrlProcessor();
-    var hqs = urlP.hasQueryString(window.location.href);
+    var urlProcessor = new UrlProcessor();
+    if(urlProcessor.hasQueryString(window.location.href)){
+      console.log("QS detected");
+    }
+    else{
+        console.log("no QS detected");
+    }
 }; 
 
